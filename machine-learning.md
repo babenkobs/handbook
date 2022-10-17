@@ -1,4 +1,6 @@
-# Numpy
+# Machine Learning
+
+## Numpy
 
 import numpy as np
 
@@ -77,7 +79,7 @@ np.zeros(10)
 np.abs(arr)
 ```
 
-# Pandas
+## Pandas
 ```
 import pandas as pd
 ```
@@ -539,7 +541,7 @@ pipe = Pipeline([('tfidf', TfidfVectorizer()),('svc', LinearSVC()),])
 pipe.fit(X_train, y_train) 
 ```
 
-Pipeline
+## Pipeline
 ```
 from sklearn.pipeline import Pipeline
 
@@ -547,7 +549,7 @@ operations = [('scaler',scaler),('knn',knn)]
 pipe = Pipeline(operations)
 ```
 
-DBSCAN
+## DBSCAN
 
 ```
 from sklearn.cluster import DBSCAN
