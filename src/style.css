@@ -1,0 +1,54 @@
+body {
+    line-height: 1.7;
+    transition: 0.3s;
+}
+body.night {
+    background-color: #111;
+    color: #fff;
+}
+
+.topMenu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.copy {
+    user-select: none;
+    filter: brightness(150%);
+    background: inherit;
+    cursor: pointer;
+}
+
+.lightModeBtn {
+    font-size: 30px;
+}
+
+.night .code {
+    color: #fff;
+    background-color: #222;
+}
+
+.code {
+    background: #ddd;
+    display: block;
+    padding: 10px 20px;
+    margin: 15px 0;
+    font-family: 'Ubuntu Mono';
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+
+.content-md {
+    max-width: 1000px;
+    padding: 30px;
+    margin: 0 auto;
+    font-family: Ubuntu;
+    white-space: pre-line;
+}

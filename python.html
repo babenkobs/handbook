@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<!--<body class='content-md night'>-->
+<body class="night">
+<pre class="content-md">
+<h1> Python</h1>
+
+PEP8 - стандарт написания кода на python
+
+<h2> Полезные функции</h2>
+<pre class="code">
+type(variable) - посмотреть тип данных
+len(variable) - узнать длинну строки или массива
+</pre>
+
+<h2> Типы данных</h2>
+В Python переменные неизменяемые. Поэтому там нет итераторов. Если переменной присваивается новое значение - создается новая переменная (ячейка памяти).
+
+Массив - это изменяемая последовательность данных (мы можем изменять, добавлять и удалять данные в массиве). Массив использует квадратные скобки[].
+Чтобы отобразить участок массива, можно использовать slice: array[3:10]
+Кортеж - это неизменяемый массив. Создается с помощью фигурных скобок().
+Множество - массив уникальных значений. Создается с помощью фигурных скобок.
+Словарь - ассоциативный массив, где каждый ключ уникальный. Задается с помощью фигурных скобок.
+<pre class="code">
+english_to_russian = {
+    "ball" : "мяч",
+    "table" : "стол"
+}
+</pre>
+
+<h2> Операции с массивами</h2>
+<pre class="code">
+myarray.append(‘some’) - добавляет элемент в массив
+</pre>
+Операции со словарями
+<pre class="code">
+if ‘some key’ in mydict: - проверяет есть ли ключ в словаре
+
+for english_word, russian_word in english_to_russian.items():
+    print(f"Перевод слова {english_word} - {russian_word}")
+</pre>
+
+<h2> Операции со строками</h2>
+<pre class="code">
+Добавить текст с несколькими строками в переменную - “””some string…”””
+Добавить форматированную строку message = f”Hi, {name}!!!”
+message.startswith(“Hi”) - начинается ли строка со слова Hi
+‘Bogdan’ in message - есть ли слово Bogdan в строке
+message.isdigit() - проверяет все ли символы в строке являются числом
+‘Some sentence’.lower().split() - преобразует всю строку в нижний регистр и разделит слова в массив.
+</pre>
+
+<h2> Операции с числами</h2>
+<pre class="code">
+5 % 2 - возвращает остаток от деления. В данном случае вернет 1.
+</pre>
+
+<pre class="code">
+If Else
+if some:
+	print(some)
+elif some == 0 or some == -1:
+	some = 1
+else:
+	some = -100
+</pre>
+
+Для многострочного условия, условие нужно обернуть в скобки:
+<pre class="code">
+if (some1 == 1 and
+	some2 == 2 and
+	some3 == 3):
+	print(‘equal’)
+</pre>
+
+<h2> Циклы</h2>
+<pre class="code">
+max = int()
+some = [12, 23, ‘some’]
+for index, item in enumerate(some):
+	print(f”{index + 1}. Item = {item}”)
+	if max < item:
+		max = item
+range(0, len(some), 2) - функция range создает секвенцию чисел с 0 до длинны массива (3) с шагом 2 (0.2). Удобно использовать в циклах, когда нужно изменить шаг перебора.
+</pre>
+
+<h2> Ввод данных в скрипт</h2>
+<pre class="code">
+message = input(“Type something: “) - В переменную message попадет то что напечатают в терминале или вызовут скрипт вот так - echo ‘Something’ | python script.py
+import sys
+date = sys.argv[1].split()
+</pre>
+получение данных из аргументов командной строки
+
+<h2> Функции</h2>
+<pre class="code">
+def some_function(some_variable, variable_with_default=10):
+	return variable_with_default * 2
+</pre>
+
+Аргумент с дефолтным значением должен быть в конце.
+Название функции должно начинаться с глагола (get_, do_, has_, can_, is_…)
+
+<h2> Класс</h2>
+<pre class="code">
+Class Circle:
+	“””Circle cans calculate diametr, area…”””
+	
+	def __init__(self, radius: float):
+		“””Initialization of circle”””
+		self.radius = radius
+
+myCircle = Circle()
+</pre>
+
+Обычный метод имеет доступ к атрибутам экземпляра через переменную self.
+Статический метод не имеет доступ к атрибутам экземпляра через self и к атрибутам класса через cls.
+<pre class="code">
+class User:
+    # какие-то определения методов
+
+    @staticmethod
+    def is_full_name(name: str) -> bool:
+        return len(name.split()) > 1
+</pre>
+
+Метод класса имеет доступ к атрибутам класса, но не имеет доступа к атрибутам экземпляра класса
+<pre class="code">
+class User:
+USERS_COUNT = 0
+
+def __init__(self):
+User.USERS_COUNT += 1
+
+@classmethod
+def how_much_users(cls):
+return cls.USERS_COUNT
+</pre>
+
+<h2> Нейминг</h2>
+Названия функций и переменных должны быть полными и понятными. Использовать английский язык.
+<pre class="code">
+def is_valid_url(url: string) -> bool:
+	“””The function returns true if http response is 400 or 301”””
+</pre>
+Указание типа принимаемого аргумента и типа возвращаемых данных являются необязательными, а информативными. Также комментарий в начале кода функции на саму работу функции не влияет, но все это удобно для работы в ide или редакторе кода.
+
+<h2> Модули и пакеты</h2>
+Модуль это файл с расширением py.
+
+Импортировать модуль и вызвать его функцию:
+<pre class="code">
+import tools
+
+tools.greet(‘Vika’)
+</pre>
+
+Импортировать функцию из модуля:
+<pre class="code">
+from tools import greet
+
+greet(‘Olya’)
+</pre>
+
+Импортировать функцию из модуля и назвать её иначе:
+<pre class="code">
+from tools import greet as greeting
+
+greeting(‘Rita’)
+</pre>
+
+Пакет это папка с модулями python. В пакете должен быть файл __init__.py.
+
+Импортировать модуль из пакета:
+<pre class="code">
+from tools import greetings
+
+greetings.say_hello(‘Marina’)
+</pre>
+
+Импортировать функцию из пакета:
+<pre class="code">
+from tools.greetings import say_hello as hello
+
+hello(‘Tamara’)
+</pre>
+
+<h2> TimeZone</h2>
+Правильно считается использовать время (объект) с указанием временной зоны. В python для этого удобно использовать pytz:
+<pre class="code">
+import datetime
+import pytz
+
+timezone = pytz.timezone(“Europe/Kiev”)
+now_tz = timezone.localize(datetime.datetime.now())
+</pre>
+
+Для форматированного вывода даты/времени можно использовать strftime:
+<pre class="code">
+now_tz.strftime(“%d.%m.%Y”)
+</pre>
+
+Для парсинга даты/времени из строки в объект datetime можно использовать strptime:
+<pre class="code">
+now = datetime.datetime.strptime(“22.03.2021”, “%d.%m.%Y”)
+</pre>
+<h2> Json</h2>
+<pre class="code">
+    <a class="copy">
+        import json
+        from pprint import pprint
+
+        try:
+        json_object = json.loads(‘[{“some_key”: “some_value”}]’)
+        except ValueError as e:
+        print(“Wrong json!”)
+        else:
+        pprint(json_object)
+    </a>
+</pre>
+
+<h2> ENV Виртуальное окружение</h2>
+Правильно сначала создать виртуальное окружение, а уже потом создавать проект.
+<pre class="code">
+python3 -m venv env - создает папку с виртуальным окружением python3
+source env/bin/activate - запускает виртуальное окружение (выполняя bash скрипт)
+source env/bin/activate.fish - запускает виртуальное окружение (выполняя fish скрипт)
+</pre>
+<h2> RE (regular expressions)</h2>
+<pre class="code">
+\d - любая цифра
+[a-z] - любой символ в нижнем регистре
+[^az] - любой символ кроме тех что в скобках (a и z)
+<a class="copy">[\S|\n\s]</a> - любой символ, даже перевод строки
+</pre>
+
+Есть ли в начале строки слеш:
+<pre class="code">
+import re
+
+if re.search(‘^/’, ‘/some.html’):
+    print(‘link’)
+</pre>
+
+Регистронезависимое регулярное выражение:
+<pre class="code">
+re.search(‘^/’, ‘/some.html’, re.IGNORECASE)
+</pre>
+</pre>
+</body>
+<script src="src/script.js"></script>
+</html>
