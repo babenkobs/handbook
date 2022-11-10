@@ -15,6 +15,14 @@ contentMd = document.querySelector('.content-md')
 if (contentMd)
     contentMd.childNodes.forEach(removeEmptyLines)
 
+no_tags = document.querySelectorAll('no')
+
+if (no_tags) {
+    no_tags.forEach(function(item){
+        console.log(item.innerText)
+    })
+}
+
 //Adding top header
 topHeader = document.createElement('div')
 topHeader.classList.add('topMenu')
