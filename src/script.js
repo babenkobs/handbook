@@ -1,8 +1,3 @@
-contentMd = document.querySelector('.content-md')
-
-//Adding new lines (<br>)
-//contentMd.innerHTML = contentMd.innerHTML.replace(/([^>])\n/g, '\$1\n<br>')
-
 function removeEmptyLines(elem, onlyFirst = false) {
     if (elem.nodeName == '#text') { lines = elem.textContent.split('\n')
         while (lines[0] == '') {
@@ -15,7 +10,10 @@ function removeEmptyLines(elem, onlyFirst = false) {
     }
 }
 
-contentMd.childNodes.forEach(removeEmptyLines)
+contentMd = document.querySelector('.content-md')
+
+if (contentMd)
+    contentMd.childNodes.forEach(removeEmptyLines)
 
 //Adding top header
 btnLight = document.createElement('a')

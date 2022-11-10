@@ -17,6 +17,7 @@ body.night {
     justify-content: space-between;
     align-items: center;
     user-select: none;
+    padding: 0 15px;
 }
 
 .copy {
@@ -51,4 +52,25 @@ body.night {
     margin: 0 auto;
     font-family: Ubuntu;
     white-space: pre-line;
+}
+body.main-page {
+    font-family: Ubuntu;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://images.unsplash.com/photo-1588287055455-9fb0ca7a2d02?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body.main-page .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+body.main-page.night {
+    background-image: url('https://images.unsplash.com/photo-1535905496755-26ae35d0ae54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+}
+body.main-page .block {
+    background: #ffffffbd;
+    padding: 20px 30px;
+    border-radius: 4px;
 }
