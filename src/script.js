@@ -16,24 +16,26 @@ if (contentMd)
     contentMd.childNodes.forEach(removeEmptyLines)
 
 //Adding top header
-btnLight = document.createElement('a')
-btnLight.innerHTML = '&#9728;'
-btnLight.classList.add('lightModeBtn')
+topHeader = document.createElement('div')
+topHeader.classList.add('topMenu')
+document.body.prepend(topHeader)
 
+//Adding home button
+if (location.pathname != '/handbook/') {
+    btnLight = document.createElement('a')
+    btnLight.innerHTML = '&#9728;'
+    btnLight.classList.add('lightModeBtn')
+    topHeader.appendChild(btnLight)
+}
+
+//Adding light button
 btnHome = document.createElement('a')
 btnHome.innerHTML = '	&#10094;'
 btnHome.classList.add('homeBtn')
 btnHome.setAttribute('href', '/handbook/')
-
-topHeader = document.createElement('div')
-topHeader.classList.add('topMenu')
-
 topHeader.appendChild(btnHome)
-topHeader.appendChild(btnLight)
-document.body.prepend(topHeader)
 
 //Adjust night mode button
-
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
