@@ -19,18 +19,17 @@ Ctrl + R - поиск по истории команд
 php -a - запустить коммандную строку php
 
 sudo /etc/init.d/alsa-utils restart - перезапустить звуковые устройства
-<a class="copy" href="">sudo systemctl restart NetworkManager</a> - перезапустить wifi
+<a class="copy">sudo systemctl restart NetworkManager</a> - перезапустить wifi
 
 touch {file1.txt,file2.txt} - создать сразу два файла file1.txt и file2.txt
 mkdir -p styles/{sass,scss} - создать сразу две папки (sass и scss) в папке styles даже если её не существует.
-
-<a class="copy" href="">
+ <a class="copy">
     sudo chown -R bogdan:www-data *
     find . -type d -exec sudo chmod 775 {} \; 
     find . -type f -exec sudo chmod 644 {} \;
 </a>
-
-<a class="copy" href="">ssh-keygen -t rsa -b 4096 -C "bogdan@gridconcepts.com.au" -f ~/.ssh/luxxe_key</a> - создать ключ ssh с именем luxxe_key
+ 
+ <a class="copy">ssh-keygen -t rsa -b 4096 -C "bogdan@gridconcepts.com.au" -f ~/.ssh/luxxe_key</a> - создать ключ ssh с именем luxxe_key
 </pre>
 </body>
 <script src="../src/script.js"></script>

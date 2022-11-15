@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MySQL SSH</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<!--<body class='content-md night'>-->
+<body class="night">
+<pre class="content-md">
+<h1>MySQL SSH</h1>
+Скачать удаленную базу данных с помощью mysqldump:
+<a class="copy">
+    mysqldump -u remoteusername -p remotepassword -h your.site.com databasename > dump.sql
+</a>
+
+mysqldump -u gcadmin -pW5h2NCQgJwrySUuL -h metrodbinstance.c60bgdacbzgh.ap-southeast-2.rds.amazonaws.com metropole_new > dump.sql
+
+ <a class="copy">scp wp-includes.zip  bitnami@54.153.149.24:~/apps/wordpress/htdocs/wp-includes.zip</a> - скопировать файл wp-includes.zip на сервер
+
+Подключиться к серверу  по ssh (ip меняется):
+ssh lb.metropole.com.au (Metropole)
+ssh bitnami@52.64.34.114 (SeoWebAudit)
+cd /opt/bitnami/apps
+</pre>
+</body>
+<script src="src/script.js"></script>
+</html>
