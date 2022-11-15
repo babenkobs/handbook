@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docker</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<!--<body class='content-md night'>-->
+<body class="night">
+<pre class="content-md">
+<h1>Docker</h1>
+Остановить и удалить все контейнеры
+docker-compose down
+или
+<a class="copy">
+docker stop $(docker ps -a -q)
+docker rm -f $(docker ps -a -q)</a>
+
+docker-compose up --build - пересобрать контейнер (Dockerfile) и поднять его
+
+docker volume rm dbdata - удалить примонтированный образ(на диске не удалиться, только внутри docker)
+
+docker run -it ubuntu bash - запустить контейнер в сеансе интерактивной работы на подключаемом терминальном устройстве (-it) 
+и запустить командную оболочку bash (bash) в контейнере ubuntu (ubuntu)
+exit - выход из контейнера
+docker stop naughty_edisson - остановить работу контейнера naughty_edisson
+docker ps -a - вывод всех запущенных контейнеров, а флажок "-a" вывод абсолютно всех, даже остановленных
+docker start naughty_edisson - запуск остановленного контейнера naughty_edisson
+docker run -h babenkobs -name myUbuntu -it ubuntu bash - запуск контейнера с именем "myUbuntu"(-name), и назначить 
+имя хоста babenkobs(-h)
+
+docker inspect myUbuntu - вывод подробной информации о контейнере с именем myUbuntu
+docker diff myUbuntu - вывод списка изменений на работающем контейнере myUbuntu
+docker logs myUbuntu - вывод списка всех событий произошедших внутри заданного контейнера
+docker stop myUbuntu - остановка работы контейнера myUbuntu
+docker rm myUbuntu - удаление контейнера myUbuntu
+docker rmi myUbuntu - удаление образа myUbuntu
+docker container prune -f - удаление всех остановленных контейнеров
+docker run -d -p 8000:8080 bitnami/apache- запустить контейнер bitnami/apache в фоновом режиме(-d), 
+и пробросить порты: 8000 - на нашей хост-машине, 8080 - порт внутри контейнера
+
+docker commit myapp bbogdans/myapp - превратить контейнер "myapp" в образ на репозитории bbogdans
+docker push bbogdans/myapp
+docker images - отобразить образы которые хранятся локально
+docker build -t bbogdans/myapp . - создать образ из файла dockerfile, который находится в той директории 
+в которой запускается команда (.), а флаг -t позволяет указать имя создаваемого образа (bbogdans/myapp)
+
+docker-machine ip default - узнать ip адресс виртуальной машины
+
+Пример рабочей команды
+docker run -d -p 8000:80 -v ${PWD}:/var/www/html php:7.2-apache
+</pre>
+</body>
+<script src="src/script.js"></script>
+</html>
