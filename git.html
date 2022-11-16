@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Git</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<!--<body class='content-md night'>-->
+<body class="night">
+<pre class="content-md">
+<h1>Git</h1>
+ <b>ctrl+b c</b> - новое окно
+ <b>ctrl+b w </b>- посмотреть список окон
+ <b>ctrl+b n </b>- переключиться на следующее окно
+ <b>ctrl+b p </b>- переключиться на предыдущее окно
+ <b>ctrl+b 0 </b>- переключиться на окно под номером 0
+ <b>ctrl+d </b>- закрыть текущее окно
+ <b>ctrl+b [ </b>- режим скролла
+
+<h2>ОКНА НА ОДНОМ ЭКРАНЕ</h2>
+ <b>ctrl+b % </b>- добавить окно с правой половины экрана
+ <b>ctrl+b " </b>- добавить окно с нижней половины экрана
+ <b>ctrl+b ctrl+стрелка </b>- ресайз текущего окна
+ <b>ctrl+b стрелка </b>- перейти в другое окно
+ <b>ctrl+b { </b>- переместить окно выше
+ <b>ctrl+b } </b>- переместить окно ниже
+
+<h2>СЕССИИ</h2>
+ <b>tmux new -s session1</b> - создать новую сессию
+ <b>ctrl+b d </b>- отключиться от сессии
+ <b>tmux ls </b>- посмотреть доступные сессии
+ <b>tmux attach -t session1</b> - подключиться к сессии session1
+ <b>tmux kill -session -t session1</b> - удалить сессию session1
+ <b>ctrl+b ctrl+r </b>- восстановить сессию после перезагрузки (если установлен плагин tmux-resurrect)
+</pre>
+</body>
+<script src="src/script.js"></script>
+</html>

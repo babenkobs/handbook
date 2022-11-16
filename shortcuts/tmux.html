@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VSCode</title>
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="night">
+<pre class="content-md">
+<h1>TMUX</h1>
+ctrl+b c - новое окно
+ctrl+b w - посмотреть список окон
+ctrl+b n - переключиться на следующее окно
+ctrl+b p - переключиться на предыдущее окно
+ctrl+b 0 - переключиться на окно под номером 0
+ctrl+d - закрыть текущее окно
+ctrl+b [ - режим скролла
+
+<h2>ОКНА НА ОДНОМ ЭКРАНЕ</h2>
+ctrl+b % - добавить окно с правой половины экрана
+ctrl+b " - добавить окно с нижней половины экрана
+ctrl+b ctrl+стрелка - ресайз текущего окна
+ctrl+b стрелка - перейти в другое окно
+ctrl+b { - переместить окно выше
+ctrl+b } - переместить окно ниже
+
+<h2>СЕССИИ</h2>
+tmux new -s session1 - создать новую сессию
+ctrl+b d - отключиться от сессии
+tmux ls - посмотреть доступные сессии
+tmux attach -t session1 - подключиться к сессии session1
+tmux kill-session -t session1 - удалить сессию session1
+ctrl+b ctrl+r - восстановить сессию после перезагрузки (если установлен плагин tmux-resurrect)
+</pre>
+</body>
+<script src="../src/script.js"></script>
+</html>

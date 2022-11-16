@@ -15,6 +15,8 @@ docker-compose down
 <a class="copy">
 docker stop $(docker ps -a -q)
 docker rm -f $(docker ps -a -q)</a>
+<br>
+<br>
 
 docker-compose up --build - пересобрать контейнер (Dockerfile) и поднять его
 
@@ -26,29 +28,25 @@ exit - выход из контейнера
 docker stop naughty_edisson - остановить работу контейнера naughty_edisson
 docker ps -a - вывод всех запущенных контейнеров, а флажок "-a" вывод абсолютно всех, даже остановленных
 docker start naughty_edisson - запуск остановленного контейнера naughty_edisson
-docker run -h babenkobs -name myUbuntu -it ubuntu bash - запуск контейнера с именем "myUbuntu"(-name), и назначить 
-имя хоста babenkobs(-h)
+docker run -h babenkobs -name myUbuntu -it ubuntu bash - запуск контейнера с именем "myUbuntu"(-name), и назначить имя хоста babenkobs(-h)
+ <b>docker inspect myUbuntu</b> - вывод подробной информации о контейнере с именем myUbuntu
+ <b>docker diff myUbuntu</b> - вывод списка изменений на работающем контейнере myUbuntu
+ <b>docker logs myUbuntu</b> - вывод списка всех событий произошедших внутри заданного контейнера
+ <b>docker stop myUbuntu</b> - остановка работы контейнера myUbuntu
+ <b>docker rm myUbuntu</b> - удаление контейнера myUbuntu
+ <b>docker rmi myUbuntu</b> - удаление образа myUbuntu
+ <b>docker container prune -f</b> - удаление всех остановленных контейнеров
+ <b>docker run -d -p 8000:8080 bitnami/apache</b> - запустить контейнер bitnami/apache в фоновом режиме(-d), и пробросить порты: 8000 - на нашей хост-машине, 8080 - порт внутри контейнера
 
-docker inspect myUbuntu - вывод подробной информации о контейнере с именем myUbuntu
-docker diff myUbuntu - вывод списка изменений на работающем контейнере myUbuntu
-docker logs myUbuntu - вывод списка всех событий произошедших внутри заданного контейнера
-docker stop myUbuntu - остановка работы контейнера myUbuntu
-docker rm myUbuntu - удаление контейнера myUbuntu
-docker rmi myUbuntu - удаление образа myUbuntu
-docker container prune -f - удаление всех остановленных контейнеров
-docker run -d -p 8000:8080 bitnami/apache- запустить контейнер bitnami/apache в фоновом режиме(-d), 
-и пробросить порты: 8000 - на нашей хост-машине, 8080 - порт внутри контейнера
-
-docker commit myapp bbogdans/myapp - превратить контейнер "myapp" в образ на репозитории bbogdans
+ <b>docker commit myapp bbogdans/myapp</b> - превратить контейнер "myapp" в образ на репозитории bbogdans
 docker push bbogdans/myapp
-docker images - отобразить образы которые хранятся локально
-docker build -t bbogdans/myapp . - создать образ из файла dockerfile, который находится в той директории 
-в которой запускается команда (.), а флаг -t позволяет указать имя создаваемого образа (bbogdans/myapp)
+ <b>docker images</b> - отобразить образы которые хранятся локально
+<b>docker build -t bbogdans/myapp .</b> - создать образ из файла dockerfile, который находится в той директории в которой запускается команда (.), а флаг -t позволяет указать имя создаваемого образа (bbogdans/myapp)
 
-docker-machine ip default - узнать ip адресс виртуальной машины
+<b>docker-machine ip default</b> - узнать ip адресс виртуальной машины
 
 Пример рабочей команды
-docker run -d -p 8000:80 -v ${PWD}:/var/www/html php:7.2-apache
+<b>docker run -d -p 8000:80 -v ${PWD}:/var/www/html php:7.2-apache</b>
 </pre>
 </body>
 <script src="src/script.js"></script>
