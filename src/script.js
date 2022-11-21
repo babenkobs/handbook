@@ -86,11 +86,13 @@ copyElems = document.querySelectorAll('.copy')
 
 copyElems.forEach((elem)=>{
     elem.onclick = function(){
-        console.log(this.innerHTML)
-
         const element = this;
         const storage = document.createElement('textarea');
-        storage.value = element.innerHTML;
+        if (element.firstChild.nodeName == 'XMP') {
+            storage.value = element.firstChild.innerHTML
+        } else {
+            storage.value = element.innerHTML;
+        }
         element.appendChild(storage);
 
         // Copy the text in the fake `textarea` and remove the `textarea`

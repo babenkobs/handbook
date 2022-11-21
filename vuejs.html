@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<!--<body class='content-md night'>-->
+<body class="night">
+<pre class="content-md">
+<h1>VueJS</h1>
+<h3>Шаблон html</h3>
+<pre class="code">
+<a class="copy"><xmp><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="theme.css">
+    <style>
+[v-cloak] {
+    display: none;
+}</style>
+</head>
+<body>
+    <div id="app" class="container" v-cloak>
+        <div class="card">
+            <h1>{{ title }}</h1>
+            <div class="form-control"></div>
+            <input 
+                type="text"
+                :placeholder="placeholderString"
+                :value="inputValue"
+                @input="inputChangeHandler"
+            />
+        </div>
+        <h2>inputValue: {{ inputValue }}</h2>
+        <button class="btn" @click="addNewNote">Add</button>
+        <hr>
+        <ul class="list">
+            <li class="list-item" v-for="note in notes">
+                {{ note }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+</xmp>
+</a>
+</pre>
+<h3>Шаблон js</h3>
+<pre class="code"><a class="copy">const App = {
+    data() {
+        return {
+            placeholderString: 'Введите название заметки',
+            title: 'Список заметок',
+            inputValue: '',
+            notes: ['Заметка 1', 'Заметка 2', 'Заметка 3', 'Заметка 4',]
+        }
+    },
+    methods: {
+        inputChangeHandler(event) {
+            this.inputValue = event.target.value
+        },
+        addNewNote() {
+            this.notes.push(this.inputValue)
+        }
+    }
+}
+
+Vue.createApp(App).mount('#app')</a>
+</pre>
+<h2>If Else</h2>
+<pre class="code"><xmp><div v-if="note.length === 0">нихера нет!</div>
+<div v-else-if="note.length === 1">всего лишь одна!</div>
+<div v-else>норм!</div></xmp></pre>
+<h2>For цикл</h2>
+<pre class="code"><xmp><div v-for="(item, idx) in notes">
+{{idx + 1}}: item.name
+</div></xmp>
+</pre>
+<h2>Атрибуты</h2>
+<a class="copy">v-model="variable"</a> - связывает input или другие элементы формы с переменной vue variable
+<a class="copy">@keydown.enter="method"</a> - при нажатии на клавиатуре Enter выполняет функцию method
+<a class="copy">@click.stop="method"</a> - при клике по элементу выполняет функию method и запрещает всплытие события click дальше по дереву элемтов
+<h2>Вспомогательные фичи</h2>
+<xmp><template v-if="tickers"></xmp> - тег template с аттрибутами vuejs не будет появлятся на странице и отображаться в верстке. Можно использовать как вспомогательную обертку для множества элементов под управлением vuejs.
+</pre>
+</body>
+<script src="src/script.js"></script>
+</html>
