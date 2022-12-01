@@ -9,6 +9,8 @@
 <body class="night">
 <pre class="content-md">
 <h1>VueJS</h1>
+<h3>Инициализация проекта</h3>
+<a class="copy">npx @vue/cli create bogdanproject</a> - создать новый проект bogdanproject
 <h3>Шаблон html</h3>
 <pre class="code">
 <a class="copy"><xmp><!DOCTYPE html>
@@ -83,8 +85,12 @@ Vue.createApp(App).mount('#app')</a>
 </pre>
 <h2>Атрибуты</h2>
 <a class="copy">v-model="variable"</a> - связывает input или другие элементы формы с переменной vue variable
-<a class="copy">@keydown.enter="method"</a> - при нажатии на клавиатуре Enter выполняет функцию method
-<a class="copy">@click.stop="method"</a> - при клике по элементу выполняет функию method и запрещает всплытие события click дальше по дереву элемтов
+
+ <a class="copy">@keydown.enter="method"</a> - при нажатии на клавиатуре Enter выполняет функцию method
+
+ <a class="copy">@click.stop="method"</a> - при клике по элементу выполняет функию method и запрещает всплытие события click дальше по дереву элемтов
+
+ <a class="copy">:class="{'active': current === t}"</a> - если current равно t, то элементу добавляется класс active
 <h2>Вспомогательные фичи</h2>
 <xmp><template v-if="tickers"></xmp> - тег template с аттрибутами vuejs не будет появлятся на странице и отображаться в верстке. Можно использовать как вспомогательную обертку для множества элементов под управлением vuejs.
 </pre>

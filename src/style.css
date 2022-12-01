@@ -31,6 +31,7 @@ body.night {
     filter: brightness(150%);
     background: inherit;
     cursor: pointer;
+    font-weight: 700
 }
 
 .lightModeBtn {
